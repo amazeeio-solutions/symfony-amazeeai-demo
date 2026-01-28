@@ -12,18 +12,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure.git",
-                "reference": "67ae9939f0f87e78b70f38f36b10d318154468f9"
+                "reference": "b1ffd0eeea251c5cf517e5639a205b9a0ecb3ad6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amazeeio-solutions/symfony-amazeeai-configure/zipball/67ae9939f0f87e78b70f38f36b10d318154468f9",
-                "reference": "67ae9939f0f87e78b70f38f36b10d318154468f9",
+                "url": "https://api.github.com/repos/amazeeio-solutions/symfony-amazeeai-configure/zipball/b1ffd0eeea251c5cf517e5639a205b9a0ecb3ad6",
+                "reference": "b1ffd0eeea251c5cf517e5639a205b9a0ecb3ad6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.4",
+                "symfony/config": "^8.0",
                 "symfony/console": "^8.0",
+                "symfony/dependency-injection": "^8.0",
                 "symfony/http-client": "^8.0",
+                "symfony/http-kernel": "^8.0",
                 "symfony/process": "^8.0"
             },
             "require-dev": {
@@ -35,15 +38,15 @@
                 "symfony/dotenv": "^8.0"
             },
             "default-branch": true,
-            "type": "project",
+            "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "AmazeeIO\\AmazeeAIConfigure\\": "src/"
+                    "AmazeeIo\\AmazeeAiConfigure\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "AmazeeIO\\AmazeeAIConfigure\\Tests\\": "tests/"
+                    "AmazeeIo\\AmazeeAiConfigure\\Tests\\": "tests/"
                 }
             },
             "license": [
@@ -64,7 +67,7 @@
                 "source": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure/tree/main",
                 "issues": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure/issues"
             },
-            "time": "2026-01-28T19:37:58+00:00"
+            "time": "2026-01-28T21:05:11+00:00"
         },
         {
             "name": "composer/semver",
