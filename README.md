@@ -15,7 +15,8 @@ It uses this [configuration Console command](https://github.com/amazeeio-solutio
 ### Index and retrieve blog demo
 
 This demo is a port of the [Blog example](https://github.com/symfony/ai-demo?tab=readme-ov-file#3-chroma-db-initialization).
-Instead of using ChromaDB, we are using PostgreSQL available from the amazee.ai setup.
+For the `store`, instead of using ChromaDB, we are using **PostgreSQL** and for the `vectorizer` **titan-embed-text-v2:0**, 
+both available from the amazee.ai setup.
 
 - Index `symfony console ai:store:index blog -vv`
 - Retrieve `symfony console ai:store:retrieve blog "Week of Symfony"`
