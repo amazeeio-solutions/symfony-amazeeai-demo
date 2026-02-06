@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "202e12d066690533f4d152108902027c",
+    "content-hash": "1aee0acf02a0a30b23e7301dbdc6fc3d",
     "packages": [
         {
             "name": "amazeeio/symfony-amazeeai-configure",
@@ -2162,6 +2162,94 @@
             "time": "2026-01-26T10:58:39+00:00"
         },
         {
+            "name": "symfony/ai-generic-platform",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ai-generic-platform.git",
+                "reference": "c19c0840f8d6ab9860cbed8a0ee210a376fe1606"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/ai-generic-platform/zipball/c19c0840f8d6ab9860cbed8a0ee210a376fe1606",
+                "reference": "c19c0840f8d6ab9860cbed8a0ee210a376fe1606",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/ai-platform": "^0.3",
+                "symfony/http-client": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^11.5.46"
+            },
+            "type": "symfony-ai-platform",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/ai",
+                    "name": "symfony/ai"
+                },
+                "branch-alias": {
+                    "dev-main": "0.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\AI\\Platform\\Bridge\\Generic\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                },
+                {
+                    "name": "Oskar Stark",
+                    "email": "oskarstark@googlemail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic platform bridge for Symfony AI",
+            "keywords": [
+                "Bridge",
+                "ai",
+                "generic",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/ai-generic-platform/tree/v0.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-01-23T21:29:55+00:00"
+        },
+        {
             "name": "symfony/ai-platform",
             "version": "v0.3.0",
             "source": {
@@ -2289,6 +2377,101 @@
                 }
             ],
             "time": "2026-01-24T08:35:01+00:00"
+        },
+        {
+            "name": "symfony/ai-postgres-store",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ai-postgres-store.git",
+                "reference": "f14561bccef68b24f9361188e90f96c46cff9904"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/ai-postgres-store/zipball/f14561bccef68b24f9361188e90f96c46cff9904",
+                "reference": "f14561bccef68b24f9361188e90f96c46cff9904",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "oskarstark/enum-helper": "^1.5",
+                "php": ">=8.2",
+                "symfony/ai-platform": "^0.3",
+                "symfony/ai-store": "^0.3",
+                "symfony/uid": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.3|^4.0",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^11.5.46"
+            },
+            "type": "symfony-ai-store",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/ai",
+                    "name": "symfony/ai"
+                },
+                "branch-alias": {
+                    "dev-main": "0.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\AI\\Store\\Bridge\\Postgres\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Hertel",
+                    "email": "mail@christopher-hertel.de"
+                },
+                {
+                    "name": "Oskar Stark",
+                    "email": "oskarstark@googlemail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "PostgreSQL pgvector vector store bridge for Symfony AI",
+            "keywords": [
+                "Bridge",
+                "ai",
+                "pgvector",
+                "postgres",
+                "postgresql",
+                "store",
+                "vector"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/ai-postgres-store/tree/v0.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-01-23T21:29:55+00:00"
         },
         {
             "name": "symfony/ai-store",

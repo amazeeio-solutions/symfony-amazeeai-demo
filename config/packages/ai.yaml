@@ -1,27 +1,57 @@
 ai:
     platform:
-        # Inference Platform configuration
-        # see https://github.com/symfony/ai/tree/main/src/platform#platform-bridges
-
-        # openai:
-        #    api_key: '%env(OPENAI_API_KEY)%'
-
-    agent:
-        # Agent configuration
-        # see https://symfony.com/doc/current/ai/bundles/ai-bundle.html
-
-        # default:
-        #    platform: 'ai.platform.openai'
-        #    model: 'gpt-5-mini'
-        #    prompt: |
-        #        You are a pirate and you write funny.
-        #    tools:
-        #        - 'Symfony\AI\Agent\Bridge\Clock\Clock'
-
+        generic:
+            amazeeai:
+                base_url: '%env(AMAZEEAI_LLM_API_URL)%'
+                api_key: '%env(AMAZEEAI_LLM_KEY)%'
+                model_catalog: 'app.amazeeai_model_catalog'
     store:
-        # Store configuration
+        postgres:
+            symfonycon:
+                dsn: '%env(AMAZEEAI_VDB_DSN)%'
+                username: '%env(AMAZEEAI_VDB_USER)%'
+                password: '%env(AMAZEEAI_VDB_PASSWORD)%'
+                table_name: 'symfony_blog'
+                vector_field: 'embedding'
+                distance: 'cosine'
+    vectorizer:
+        amazeeai:
+            platform: 'ai.platform.generic.amazeeai'
+            model: 'titan-embed-text-v2:0'
+    indexer:
+        blog:
+            loader: 'Symfony\AI\Store\Document\Loader\RssFeedLoader'
+            source: 'https://feeds.feedburner.com/symfony/blog'
+            filters:
+                - 'app.filter.week_of_symfony'
+            transformers:
+                - 'Symfony\AI\Store\Document\Transformer\TextSplitTransformer'
+                - 'Symfony\AI\Store\Document\Transformer\TextTrimTransformer'
+            vectorizer: 'ai.vectorizer.amazeeai'
+            store: 'ai.store.postgres.symfonycon'
+    retriever:
+        blog:
+            vectorizer: 'ai.vectorizer.amazeeai'
+            store: 'ai.store.postgres.symfonycon'
 
-        # chromadb:
-        #    default:
-        #        client: 'client.service.id'
-        #        collection: 'my_collection'
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    app.amazeeai_model_catalog:
+        class: 'App\Platform\AmazeeAiModelCatalog'
+        arguments:
+            $httpClient: '@http_client'
+            $baseUrl: '%env(AMAZEEAI_LLM_API_URL)%'
+            $apiKey: '%env(AMAZEEAI_LLM_KEY)%'
+
+    Symfony\AI\Store\Document\Loader\RssFeedLoader: ~
+    Symfony\AI\Store\Document\Transformer\TextSplitTransformer: ~
+    Symfony\AI\Store\Document\Transformer\TextTrimTransformer: ~
+
+    app.filter.week_of_symfony:
+        class: 'Symfony\AI\Store\Document\Filter\TextContainsFilter'
+        arguments:
+            $needle: 'Week of Symfony'
+            $caseSensitive: false
