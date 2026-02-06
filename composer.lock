@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1aee0acf02a0a30b23e7301dbdc6fc3d",
+    "content-hash": "d42ff2091636cb371859f8bbbd3f9e8d",
     "packages": [
         {
             "name": "amazeeio/symfony-amazeeai-configure",
-            "version": "dev-main",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure.git",
-                "reference": "e2de0f05647923efe80d67917499add5ac58d71f"
+                "reference": "906d99e09cd62e79b0aec1c51889d77e6ee36e36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amazeeio-solutions/symfony-amazeeai-configure/zipball/e2de0f05647923efe80d67917499add5ac58d71f",
-                "reference": "e2de0f05647923efe80d67917499add5ac58d71f",
+                "url": "https://api.github.com/repos/amazeeio-solutions/symfony-amazeeai-configure/zipball/906d99e09cd62e79b0aec1c51889d77e6ee36e36",
+                "reference": "906d99e09cd62e79b0aec1c51889d77e6ee36e36",
                 "shasum": ""
             },
             "require": {
@@ -30,6 +30,8 @@
                 "symfony/process": "^8.0"
             },
             "require-dev": {
+                "captainhook/captainhook": "^5.23",
+                "captainhook/plugin-composer": "^5.3",
                 "friendsofphp/php-cs-fixer": "^3.93",
                 "phpstan/phpstan": "^2.1",
                 "phpstan/phpstan-strict-rules": "^2.0",
@@ -38,7 +40,6 @@
                 "spatie/ray": "^1.45",
                 "symfony/dotenv": "^8.0"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
@@ -65,10 +66,10 @@
                 "amazee.io"
             ],
             "support": {
-                "source": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure/tree/main",
+                "source": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure/tree/0.0.1",
                 "issues": "https://github.com/amazeeio-solutions/symfony-amazeeai-configure/issues"
             },
-            "time": "2026-02-05T17:30:08+00:00"
+            "time": "2026-02-06T11:41:22+00:00"
         },
         {
             "name": "composer/semver",
@@ -10545,9 +10546,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "amazeeio/symfony-amazeeai-configure": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
